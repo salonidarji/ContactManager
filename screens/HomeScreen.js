@@ -23,6 +23,42 @@ export default class HomeScreen extends React.Component {
     title: "Contact App"
   };
 
+  componentWillMount() {
+    const { navigation } = this.props;
+    navigation.addListener("willFocus", () => {
+      this.getAllContact();
+    });
+  }
+
+  getAllContact = async () => {
+    //get contact
+    await AsyncStorage.getAllKeys()
+      .then(keys => {
+        return AsyncStorage.multiGet(keys)
+          .then(result => {
+            this.setState({
+              data: result.sort(function(a, b) {
+                if (JSON.parse(a[1]).fname < JSON.parse(b[1]).fname) {
+                  return -1;
+                }
+                if (JSON.parse(a[1]).fname > JSON.parse(b[1]).fname) {
+                  return 1;
+                }
+                return 0;
+              })
+            });
+          })
+          .catch(err => {
+            console.log("multi get:" + err);
+          });
+      })
+      .catch(err => {
+        console.log("load key:" + err);
+      });
+
+    console.log(this.state.data);
+  };
+
   render() {
     return (
       <View style={styles.container}>
