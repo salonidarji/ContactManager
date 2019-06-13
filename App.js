@@ -1,7 +1,7 @@
-import { HomeScreen } from "./screens/HomeScreen";
-import { AddNewContactScreen } from "./screens/AddNewContactScreen";
-import { EditContactScreen } from "./screens/EditContactScreen";
-import { ViewContactScreen } from "./screens/ViewContactScreen";
+import HomeScreen from "./screens/HomeScreen";
+import AddNewContactScreen from "./screens/AddNewContactScreen";
+import EditContactScreen from "./screens/EditContactScreen";
+import ViewContactScreen from "./screens/ViewContactScreen";
 
 import { createStackNavigator, createAppContainer } from "react-navigation";
 
@@ -16,7 +16,7 @@ const MainNavigator = createStackNavigator(
     defaultNavigationOptions: {
       headerTintColor: "#fff",
       headerStyle: {
-        backgroundColor: "#fff"
+        backgroundColor: "#B83227"
       },
       headerTitleStyle: {
         color: "#fff"
