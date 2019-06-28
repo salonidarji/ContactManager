@@ -9,14 +9,14 @@ const MainNavigator = createStackNavigator(
   {
     Home: { screen: HomeScreen },
     Add: { screen: AddNewContactScreen },
-    View: { screen: EditContactScreen },
-    Edit: { screen: ViewContactScreen }
+    View: { screen: ViewContactScreen },
+    Edit: { screen: EditContactScreen }
   },
   {
     defaultNavigationOptions: {
       headerTintColor: "#fff",
       headerStyle: {
-        backgroundColor: "#B83227"
+        backgroundColor: "#EEC213"
       },
       headerTitleStyle: {
         color: "#fff"
